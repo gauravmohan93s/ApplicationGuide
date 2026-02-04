@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, Float, ForeignKey, Text, Decimal
+from sqlalchemy import Column, Integer, String, Boolean, Float, ForeignKey, Text, DECIMAL
 from sqlalchemy.orm import relationship
 from .database import Base
 
@@ -23,7 +23,7 @@ class CourseCatalog(Base):
     course_name = Column(String, index=True)
     level_code = Column(String) # UG/PG
     intake_months = Column(String) # Comma separated
-    tuition_fee = Column(Decimal(10, 2))
+    tuition_fee = Column(DECIMAL(10, 2))
     is_stem = Column(Boolean, default=False)
     has_internship = Column(Boolean, default=False)
     min_ielts_overall = Column(Float)

@@ -36,6 +36,9 @@ def clean_gpa(row):
     return 0.0
 
 def seed():
+    # Create tables if they don't exist
+    models.Base.metadata.create_all(bind=engine)
+    
     db = SessionLocal()
     
     # Check connection
